@@ -1,0 +1,8 @@
+<mat-toolbar color="primary">
+    <span class="spacer"> </span>
+    <ul>
+        <li *ngIf="!userisAuthenticated"> 
+           <a mat-button  routerLinkActive="mat-accent" (click)="logoutuser()">Logout</a>
+       </li>
+    </ul>
+</mat-toolbar>

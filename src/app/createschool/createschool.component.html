@@ -1,0 +1,15 @@
+<mat-card>
+    <form (submit)="onLogin(f)" #f="ngForm"  *ngIf="!isLoading">
+        <mat-form-field>
+            <input matInput type="text" ngModel name="schoolName" #emailInput="ngModel"  placeholder="Schoolname" required>
+            <mat-error *ngIf="emailInput.invalid"> Please enter valid school name</mat-error>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" ngModel name="address_line_1" #emailInput="ngModel"  placeholder="address">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" ngModel name="city" #emailInput="ngModel"  placeholder="city">
+        </mat-form-field>
+        <button mat-raised-button color="accent" type="submit" *ngIf="!isLoading">CreateSchool</button>
+    </form>
+</mat-card>

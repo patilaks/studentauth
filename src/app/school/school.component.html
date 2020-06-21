@@ -1,0 +1,18 @@
+<mat-accordion multi="true">
+    <mat-expansion-panel  *ngFor="let school of schoolsdata">
+    <mat-expansion-panel-header>
+       <P>{{school.schoolName}}</P> 
+    </mat-expansion-panel-header>   
+    <p>{{school.city}}</p>
+    <mat-action-row >
+        <a mat-button color="primary" [routerLink]="['/editschool', school.id]">   EDIT  </a>
+        <button mat-button color="warn" > DELETE  </button>
+    </mat-action-row>
+    </mat-expansion-panel>
+</mat-accordion>
+
+ <button mat-raised-button color="accent" routerLink="/createschool">create School </button>
+
+
+
+

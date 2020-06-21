@@ -1,0 +1,30 @@
+
+
+<app-header> </app-header>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6" *ngIf="!isadmin">
+            <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>User Module</mat-card-title>
+                </mat-card-header>
+                <mat-card-actions>
+                  <button mat-button routerLink="/createstudent">Enter</button>
+                </mat-card-actions>
+              </mat-card>
+        </div>
+        <div class="col-6" *ngIf="isadmin">
+            <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+                  <mat-card-title>Admin Module</mat-card-title>
+                </mat-card-header>
+                <mat-card-actions>
+                  <button mat-button routerLink="/school">Enter</button>
+                </mat-card-actions>
+              </mat-card>
+        </div>
+    </div>
+</div>

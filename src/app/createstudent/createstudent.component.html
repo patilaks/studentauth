@@ -1,0 +1,33 @@
+
+<mat-card>
+    <form (submit)="onLogin(f)" #f="ngForm"  *ngIf="!isLoading">
+        <mat-form-field>
+            <input matInput type="text" ngModel name="name" #nameInput="ngModel"  placeholder="name" required>
+            <mat-error *ngIf="emailInput.invalid"> Please enter valid school name</mat-error>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+            <input matInput [matDatepicker]="picker" placeholder="Choose a date"  name="date" required (dateInput)="addEvent('input', $event)" (dateChange)="addEvent('change', $event)">
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <button mat-raised-button (click)="picker.open()">Open</button>
+        <mat-form-field>
+            <input matInput type="text" ngModel name="std" #standardInput="ngModel"  placeholder="standard">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput type="text" ngModel name="division" #emailInput="ngModel"  placeholder="division">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>pick your school</mat-label>
+            <mat-select [(ngModel)]="selectedValue" name="schoolName;">
+              <mat-option *ngFor="let food of  schoolsdata" [value]="food.schoolName">
+                {{food.schoolName}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>     
+
+        <mat-form-field>
+            <input matInput type="text" ngModel name="mobile" #emailInput="ngModel"  placeholder="mobile">
+        </mat-form-field>
+        <button mat-raised-button color="accent" type="submit" *ngIf="!isLoading">CreateSchool</button>
+    </form>
+</mat-card>
